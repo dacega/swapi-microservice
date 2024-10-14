@@ -4,7 +4,7 @@ import requests
 
 app = Flask(__name__)
 api = Api(app, version='1.0', title='API de Star Wars',
-          description='Microservicio que consume la API de Star Wars y ordena los datos por nombre')
+          description='Microservicio que consume la API de Star Wars y ordena los datos de People por nombre')
 
 ns = api.namespace('people', description='Operaciones relacionadas con los personajes')
 
