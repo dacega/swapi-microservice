@@ -1,19 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: swapi-microservice  # Nombre del Deployment
+  name: swapi-microservice
 spec:
-  replicas: 1 # Número de pods que se ejecutarán
+  replicas: 1
   selector:
     matchLabels:
-      app: swapi-microservice  # Etiqueta para seleccionar los pods
+      app: swapi-microservice
   template:
     metadata:
       labels:
-        app: swapi-microservice  # Etiqueta para los pods
+        app: swapi-microservice
     spec:
       containers:
-      - name: swapi-microservice  # Nombre del contenedor
-        image: dacega97/swapi-microservice:latest  # Imagen de Docker Hub
+      - name: swapi-microservice
+        image: dacega97/swapi-microservice:latest  # Reemplaza con tu imagen
         ports:
-        - containerPort: 5000  # Puerto que expone el contenedor
+        - containerPort: 5000
+        resources:  # se definen los recursos
+          requests:  # Recursos mínimos que necesita el contenedor
+            cpu: 100m   # 100 milicores de CPU
+            memory: 100Mi  # 100 MiB de memoria
+          limits:  # Recursos máximos que puede usar el contenedor
+            cpu: 200m   # 200 milicores de CPU
+            memory: 200Mi  # 200 MiB de memoria
