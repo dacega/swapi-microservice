@@ -16,11 +16,11 @@ Este repositorio contiene un microservicio en Python que consume la API (People)
 ```bash
 git clone https://github.com/dacega/swapi-microservice.git
 ```
-2. Construye la imagen de Docker:
+2. Vamos a la carpeta /Docker y Construimos la imagen de Docker:
 ```bash
 docker build -t <nombre-imagen>:<tag> .
 ```
-3. (Opcional) Ejecuta el microservicio localmente con Docker Compose
+3. (Opcional) Ejecuta el microservicio localmente con Docker Compose:
 
 El docker-compose.yml contiene el comando para construir el Dockerfile directamente si la imagen no está creada anteriormente
 
@@ -36,7 +36,9 @@ docker push <tu_usuario_de_docker_hub>/<nombre-imagen>:<tag>
 ```
 5. Despliega el microservicio en Kubernetes
 
-En mi caso, se hizo uso de Minikube
+En mi caso, se hizo uso de Minikube.
+
+Dentro de la carpeta /Manifest
 
 ```bash
 kubectl apply -f deployment.yaml
