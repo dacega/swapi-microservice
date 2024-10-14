@@ -89,7 +89,8 @@ esto te devolverá la lista de People ordenada por el campo nombre:
 	```bash
 	./test.sh
 	```
- 	Devolviendo el resultado del test
+ 	Devolviendo el resultado del test:
+
 	![image](https://github.com/user-attachments/assets/bb0b3d58-e8a1-427e-bdc4-bb3398f18f26)
 
 	(Esta prueba de rendimiento puede variar según los recursos asignados en el Deployment)
