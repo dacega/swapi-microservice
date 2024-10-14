@@ -60,6 +60,9 @@ Para hacer uso y verificar que el microservicio funciona correctamente, accedemo
 
 Al pulsar en execute, nos devolverá la lista de los nombres ordenados:
 
+![image](https://github.com/user-attachments/assets/d6fce286-e854-45b9-8e20-20e97355ae96)
+
+
 ## Puntos extra
 
  1. Se ha configurado un HPA para escalar automáticamente el microservicio en función de la utilización de CPU.
