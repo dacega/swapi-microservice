@@ -63,11 +63,9 @@ esto te devolverá la lista de People ordenada por el campo nombre:
 
 ## Puntos extra
 
- 
-
  1. Se ha configurado un HPA para escalar automáticamente el microservicio en función de la utilización de CPU.
  
-	Para aplicar el HPA (hpa.yml):
+	Para aplicar el HPA (hpa.yaml):
 	```bash
 	kubectl apply -f hpa.yaml
 	```
