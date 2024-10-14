@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
       - name: swapi-microservice
-        image: dacega97/swapi-microservice:v2  # Reemplazo con la imagen del repositorio
+        image: dacega97/swapi-microservice:latest  # Reemplazo con la imagen del repositorio
         ports:
         - containerPort: 5000
         resources:  # se definen los recursos
           requests:  # Recursos mínimos que necesita el contenedor
-            cpu: 100m   # 100 milicores de CPU
-            memory: 100Mi  # 100 MiB de memoria
+            cpu: 200m   # 100 milicores de CPU
+            memory: 200Mi  # 100 MiB de memoria
           limits:  # Recursos máximos que puede usar el contenedor
-            cpu: 200m   # 200 milicores de CPU
-            memory: 200Mi  # 200 MiB de memoria
+            cpu: 300m   # 200 milicores de CPU
+            memory: 300Mi  # 200 MiB de memoria
