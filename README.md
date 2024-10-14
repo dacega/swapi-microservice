@@ -14,4 +14,4 @@ Este repositorio contiene un microservicio en Python que consume la API (People)
 1. Clona este repositorio:
 
 ```bash
-git clone [se quitó una URL no válida]
+git clone https://github.com/dacega/swapi-microservice.git
