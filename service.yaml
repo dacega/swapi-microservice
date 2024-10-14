@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: swapi-microservice-service  # Nombre del Service
+spec:
+  selector:
+    app: swapi-microservice  # Etiqueta para seleccionar los pods
+  ports:
+  - protocol: TCP
+    port: 80  # Puerto que se expone al exterior
+    targetPort: 5000  # Puerto del contenedor
+  type: NodePort  # Tipo de Service (LoadBalancer o NodePort)
