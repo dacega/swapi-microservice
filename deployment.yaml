@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: swapi-microservice
-        image: dacega97/swapi-microservice:latest  # Reemplaza con tu imagen
+        image: dacega97/swapi-microservice:v2  # Reemplazo con la imagen del repositorio
         ports:
         - containerPort: 5000
         resources:  # se definen los recursos
