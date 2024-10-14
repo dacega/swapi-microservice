@@ -3,19 +3,25 @@ import requests
 
 app = Flask(__name__)
 
-@app.route('/swapi/<resource>/<int:id>')
-def get_swapi_resource(resource, id):
+@app.route('/people')
+def get_people():
     """
-    Obtiene datos de la API de Star Wars para un recurso e ID especifos.
+    Obtiene datos de la API de Star Wars, los ordena por nombre 
+    y los devuelve en formato JSON.
     """
     try:
-        response = requests.get(f'https://swapi.dev/api/{resource}/{id}')
-        response.raise_for_status()  # Lanza una excepción para errores HTTP
+        response = requests.get('https://swapi.dev/api/people/')
+        response.raise_for_status()  # Lanza una excepción si hay un error HTTP
         data = response.json()
-        return jsonify(data)
+        people = data['results']
+
+        # Ordena la lista de personas por nombre en orden ascendente
+        people.sort(key=lambda person: person['name'])  
+
+        return jsonify(people)
     except requests.exceptions.RequestException as e:
         app.logger.error(f"Error al obtener datos de la API: {e}")
         return jsonify({'error': 'No se pudieron obtener los datos'}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')  # Especificar host='0.0.0.0' para que sea accesible desde fuera del contenedor
+    app.run(debug=True, host='0.0.0.0')
