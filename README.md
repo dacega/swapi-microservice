@@ -53,7 +53,7 @@ Luego, ya que no tengo acceso a Minikube externamente, hice uso de un port-forwa
 ```bash
 kubectl port-forward <nombre_del_pod> 8080:5000
 
-7. Prueba del microservicio
+## Prueba del microservicio
 
 Para hacer uso y verificar que el microservicio funciona correctamente, hacemos una petición curl al puerto expuesto a través del port-forward
 ```bash
@@ -61,3 +61,27 @@ curl http://localhost:8080/people
 
 esto te devolverá la lista de People ordenada por el campo nombre:
 ![image](https://github.com/user-attachments/assets/52e275dd-607c-4c04-9716-1f550eca031e)
+
+## Puntos extra
+
+1. Se ha configurado un HPA para escalar automáticamente el microservicio en función de la utilización de CPU.
+
+Para aplicar el HPA:
+```bash
+kubectl apply -f hpa.yaml
+
+2. Pruebas de rendimiento
+Se ha creado un script de prueba de rendimiento con ab (test.sh).
+
+Para ejecutar la prueba:
+Asegúrate de que el port-forward esté activo:
+```bash
+kubectl port-forward <nombre_del_pod> 8080:5000
+
+Dale permisos de ejecución al script:
+```bash
+chmod +x test.sh
+
+Ejecuta el script:
+```bash
+./test.sh
