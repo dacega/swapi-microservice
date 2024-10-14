@@ -56,12 +56,9 @@ kubectl port-forward <nombre_del_pod> 8080:5000
 ```
 ## Prueba del microservicio
 
-Para hacer uso y verificar que el microservicio funciona correctamente, hacemos una petición curl al puerto expuesto a través del port-forward
-```bash
-curl http://localhost:8080/people
-```
-esto te devolverá la lista de People ordenada por el campo nombre:
-![image](https://github.com/user-attachments/assets/52e275dd-607c-4c04-9716-1f550eca031e)
+Para hacer uso y verificar que el microservicio funciona correctamente, accedemos al puerto expuesto a través del port-forward en el navegador para acceder al swagger.
+
+Al pulsar en execute, nos devolverá la lista de los nombres ordenados:
 
 ## Puntos extra
 
