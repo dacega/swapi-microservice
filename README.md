@@ -80,10 +80,12 @@ esto te devolverá la lista de People ordenada por el campo nombre:
 	kubectl port-forward <nombre_del_pod> 8080:5000
 	```
 	Darle permisos de ejecución al script:
-		```bash
+
+	```bash
 	chmod +x test.sh
 	```
 	Ejecuta el script:
+
 	```bash
 	./test.sh
 	```
