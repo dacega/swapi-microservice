@@ -4,21 +4,13 @@ import requests
 
 app = Flask(__name__)
 api = Api(app, version='1.0', title='API de Star Wars',
-          description='Microservicio que consume la API de Star Wars y ordena los datos de People por nombre')
+          description='Microservicio que consume la API de Star Wars y ordena los datos por nombre')
 
 ns = api.namespace('people', description='Operaciones relacionadas con los personajes')
-
-# Modelo para la respuesta de la API
-person_model = api.model('Person', {
-    'name': fields.String(required=True, description='Nombre del personaje'),
-    'height': fields.String(required=True, description='Altura del personaje'),
-    # ... otros campos que quieras documentar
-})
 
 @ns.route('')
 class PeopleList(Resource):
     @ns.doc('Obtener lista de personajes')
-    @ns.marshal_list_with(person_model)
     def get(self):
         """
         Obtiene datos de la API de Star Wars (con paginación), 
